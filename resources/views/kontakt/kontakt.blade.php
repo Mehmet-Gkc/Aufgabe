@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="bg-red-300 container mx-auto bg">
+<div class="container mx-auto bg">
     <div class="flex flex-col items-center justify-center p-2">
             <div class="text-center mt-6">
                 <h2 class="text-l md:text-2xl capitalize my-4">kontakt</h2>
@@ -11,7 +11,8 @@
 
             
 
-            <form action="" class="flex flex-col justify-center w-full md:w-2/3">
+            <form method="POST" enctype="multipart/form-data" class="flex flex-col justify-center w-full md:w-2/3">
+                @csrf
                 <p class="w-full text-left my-4 text-2xl">Kontaktformular</p>
                 <div class="flex flex-col md:flex-row w-full md:my-4">                    
                     <div class="flex flex-col w-full md:w-2/3">
@@ -49,7 +50,7 @@
                     <input type="checkbox" name="absenden" value="absenden">
                     <label for="absenden" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione veritatis, natus accusamus non quam officiis deserunt facilis quae deleniti neque.</label><br>
 
-                    <button type="submit" class="uppercase text-pink-600 bg-gray-100 w-fit px-6 py-3 my-8 flex items-center rounded-md cursor-pointer">
+                    <button type="submit" class="uppercase font-bold text-pink-600 bg-gray-100 w-fit px-6 py-3 my-8 flex items-center rounded-md cursor-pointer">
                          absenden
                     </button> 
                 </div>

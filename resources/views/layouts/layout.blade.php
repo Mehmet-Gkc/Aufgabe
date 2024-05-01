@@ -18,7 +18,7 @@
 
 <!-- Navbar -->
 <div class="w-screen h-screen">
-     <nav class="h-fit bg-blue-500 container mx-auto md:flex md:items-center md:justify-between uppercase font-bold">
+     <nav class="container mx-auto md:flex md:items-center md:justify-between uppercase font-bold">
         <div class="flex justify-between items-center">
             <a href="/index" class="cursor-pointer text-pink-600">                
                 <img src="/img/logo.png" alt="logo">lorem ipsum                

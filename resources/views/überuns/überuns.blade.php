@@ -11,17 +11,27 @@
             </div>
 
             <div class="flex justify-center m-4 text-center">
-                <div class="p-4">
+                <!--<div class="p-4">
                     <img src="img/foto2.png" alt="" class="">
                     <p class="text-lg md:text-2xl uppercase font-bold text-pink-600">monika petersen</p>
                     <p>monikapetersen@loremipsum.de</p>
                 </div>
                 
-                <div class="p-4">
+                 <div class="p-4">
                     <img src="img/foto3.png" alt="" >
                     <p class="text-lg md:text-2xl uppercase font-bold text-pink-600">leon knirsch</p>
                     <p>leonknirsch@loremipsum.de</p>
-                </div>                
+                </div> -->
+
+                @foreach($mitarbeiters as $mitarbeiter)        
+                    <div class="p-4">
+                        <div class="card-body">                            
+                            <p class="text-lg md:text-2xl uppercase font-bold text-pink-600">{{ $mitarbeiter['vorname'] }}</p>
+                            <p class="text-lg md:text-2xl uppercase font-bold text-pink-600">{{ $mitarbeiter['nachname'] }}</p>
+                            <p>{{ $mitarbeiter['email'] }}</p>  
+                        </div>
+                    </div>                
+                @endforeach
             </div>
         </div> 
     </div>    
