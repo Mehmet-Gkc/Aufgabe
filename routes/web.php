@@ -11,4 +11,4 @@ Route::get('/', [HomeController::class,'index']);
 Route::get('/index', [HomeController::class,'index']);
 Route::get('/überuns', [HomeController::class,'überuns']);
 
-Route::get('/kontakt', [KontaktController::class,'kontakt']);
+Route::get('/kontakt', [KontaktController::class,'show'])->name('kontakt.show');
