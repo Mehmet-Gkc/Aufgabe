@@ -4,7 +4,7 @@
 
 ---
 
-![Screenshot from Project](./public/img/startseite.png)
+![Screenshot from Project](./public/img/homepage.png)
 #### Navigation
 
 - About Project
@@ -15,9 +15,10 @@
   - GitHub: 
 - Used Tools
   - _Laravel_
-  - _Fonts_
+  - _JQuery_
   - _Tailwind_
   - _Icons_
+  - _Fonts_
 
 ---
 ### About Project
@@ -30,9 +31,12 @@ The following functions can be used in our system:
 
 ### Developed With
 #### Frontend
-- [x] _JavaScript_
 - [x] _Laravel_
+- [x] _JavaScript_
 - [x] _Tailwind_
+- [x] _JQuery_
+- [x] _Slider_
+- [x] _CSS_
 
 #### Backend
 - [x] _MySQL_
@@ -40,8 +44,8 @@ The following functions can be used in our system:
 ---
 ### Contact
 
-Mail: discovertheworlddci08@gmail.com<br>
-GitHub: https://github.com/Mehmet-Gkc/Aufgabe<br>
+Mail: mehmetgokce61@gmail.com<br>
+GitHub: https://github.com/Mehmet-Gkc/Laravel_Tailwind<br>
 
 ---
 ### Used Tools
@@ -50,6 +54,7 @@ GitHub: https://github.com/Mehmet-Gkc/Aufgabe<br>
 - [Tailwind](https://tailwindcss.com/docs/guides/laravel)
 - [icons](https://ionic.io/ionicons)
 - [npm](https://www.npmjs.com/)
+- [JQuery](https://releases.jquery.com/)
 - [Google Fonts](https://fonts.google.com/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 
