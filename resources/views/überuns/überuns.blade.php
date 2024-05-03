@@ -13,7 +13,7 @@
             </div>
 
             <!-- Wir haben die Daten, die wir als "mitarbeiters" von der HomeController.php Seite gesendet haben, hier verwendet -->
-            <div class="flex justify-center m-4 text-center">
+            <div class="flex flex-col md:flex-row justify-center m-4 text-center">
                 <div class="p-4">
                     <img src="img/foto2.png" alt="" class="">
                     <span class="text-lg md:text-2xl uppercase font-bold text-pink-600">{{ $mitarbeiters[0]['vorname'] }}</span>

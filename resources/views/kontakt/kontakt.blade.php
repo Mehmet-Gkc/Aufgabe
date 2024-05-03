@@ -37,6 +37,11 @@
                         class="p-2 bg-gray-100 border-2 rounded-md focus:outline-none"
                         />
                         <label for="">Vorname*</label>
+
+                        @error('name')
+                            <span class="text-red-500">{{message}}</span>
+                        @enderror
+
                         <input
                         type="email"
                         name="email"                        
@@ -44,7 +49,7 @@
                         />
                         <label for="">E-Mail*</label>  
                     </div>
-                    <div class="flex flex-col w-full md:w-2/3 mx-2 md:mx-6">
+                    <div class="flex flex-col w-full md:w-2/3 md:mx-2 md:mx-6">
                         <input
                         type="text"
                         name="nachname"             
