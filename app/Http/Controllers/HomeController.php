@@ -14,6 +14,7 @@ class HomeController extends Controller
     }
 
     public function überuns() {
+        // wir senden die Daten aus der Datenbank als key "mitarbeiters" an die Überuns-Seite
         $mitarbeiters = Mitarbeiters::all();
         return view('überuns.überuns' , ['mitarbeiters' => $mitarbeiters ]); 
     }

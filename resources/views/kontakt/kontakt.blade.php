@@ -1,3 +1,5 @@
+<!-- Kontakt -->
+
 @extends('layouts.layout')
 
 @section('content')
