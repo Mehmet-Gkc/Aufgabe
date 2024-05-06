@@ -13,3 +13,4 @@ Route::get('/überuns', [HomeController::class,'überuns']);
 
 Route::get('/kontakt', [KontaktController::class,'show'])->name('kontakt.show');
 Route::post('/kontakt', [KontaktController::class,'send'])->name('kontakt.send');
+Route::post('/message', [KontaktController::class,'receiveMessage'])->name('kontakt.message');

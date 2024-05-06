@@ -11,6 +11,7 @@
                 <p class="text-xl md:text-4xl uppercase font-bold text-pink-600 my-4">wir sind für sie da.</p>                
             </div>    
             
+            {{-- Succes message --}}
             @if (session()->has('success'))
                 <div class="relative flex flex-col sm:flex-row sm:items-center bg-gray-200 dark:bg-green-700 shadow rounded-md py-5 pl-6 pr-8 sm:pr-6 mb-3 mt-3">
                     <div class="flex flex-row items-center border-b sm:border-b-0 w-full sm:w-auto pb-4 sm:pb-0">
@@ -26,6 +27,7 @@
                 </div>      
             @endif
 
+            {{-- Form --}}
             <form action="{{ route('kontakt.send') }}" method="POST" enctype="multipart/form-data" class="flex flex-col justify-center w-full md:w-2/3">
                 @csrf
                 <p class="w-full text-left my-4 text-2xl">Kontaktformular</p>
@@ -33,47 +35,70 @@
                     <div class="flex flex-col w-full md:w-2/3">
                         <input
                         type="text"
-                        name="vorname"                                               
+                        name="vorname"  
+                        id="vorname"                                             
                         class="p-2 bg-gray-100 border-2 rounded-md focus:outline-none"
                         />
-                        <label for="">Vorname*</label>
-
-                        @error('name')
-                            <span class="text-red-500">{{message}}</span>
-                        @enderror
+                        <label for="vorname" class="mb-4 md:mb-6">Vorname*</label>                      
 
                         <input
                         type="email"
-                        name="email"                        
+                        name="email"
+                        id="email"                      
                         class="p-2 bg-gray-100 border-2 rounded-md focus:outline-none"
                         />
-                        <label for="">E-Mail*</label>  
+                        <label for="email" class="mb-4">E-Mail*</label>                         
                     </div>
+
                     <div class="flex flex-col w-full md:w-2/3 md:mx-2 md:mx-6">
                         <input
                         type="text"
-                        name="nachname"             
+                        name="nachname"
+                        id="nachname"           
                         class="p-2 bg-gray-100 border-2 rounded-md focus:outline-none"
                         />
-                        <label for="">Nachname*</label>
+                        <label for="nachname" class="mb-4 md:mb-6">Nachname*</label>                      
+                        
                         <input
                         type="text"
-                        name="telefon"                        
+                        name="telefon"
+                        id="telefon"                 
                         class="p-2 bg-gray-100 border-2 rounded-md focus:outline-none"
                         />
-                        <label for="">Telefon</label>
+                        <label for="telefon" class="mb-4">Telefon</label>                        
                     </div>
                 </div>
 
+            {{-- E-Mail Validation, Errorhändler --}}
+
+            @error('vorname')
+                <h3 class="text-red-500 text-2xl">Fehler:</h3>
+                <span class="text-red-500"> - Bitte gib deinen Vornamen an.</span>
+            @enderror
+
+            @error('nachname')
+                <span class="text-red-500"> - Bitte gib deinen Nachnamen an</span>
+            @enderror
+
+            @error('email')
+                <span class="text-red-500"> - Bitte gib deine E-Mail an</span>
+            @enderror
+
+            @error('is_active')
+                <span class="text-red-500"> - Bitte akzeptiere die Datenschutzbestimmungen. </span>
+            @enderror            
+
+
                 <div class="w-full my-2 ">
-                    <p class="my-4">* Pflichtfelder</p>
-                    <input type="checkbox" name="absenden" value="absenden">
-                    <label for="absenden" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione veritatis, natus accusamus non quam officiis deserunt facilis quae deleniti neque.</label><br>
+                    <p class="my-4">* Pflichtfelder</p>                   
+                    <input type="checkbox" name="is_active" id="is_active" required value="1" {{ old('is_active', 0) == 1 ? 'checked' : '' }}>
+
+                    <label for="is_active" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione veritatis, natus accusamus non quam officiis deserunt facilis quae deleniti neque.</label><br>
 
                     <button type="submit" class="uppercase font-bold text-pink-600 bg-gray-100 w-fit px-6 py-3 my-8 flex items-center rounded-md cursor-pointer">
                          absenden
                     </button> 
-                </div>
+                </div>                 
 
             </form>
     </div>
