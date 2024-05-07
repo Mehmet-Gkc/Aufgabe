@@ -16,6 +16,11 @@
     @vite('resources/css/app.css')
     
     <title>Laravel & Tailwind</title>
+
+    <style>
+        .nav-link.active {
+        border-bottom: 2px solid #ff3399;}
+    </style>
 </head>
 
 <body>
@@ -35,14 +40,14 @@
 
         <ul class="hidden flex flex-col md:flex md:flex-row items-center md:py-0 py-16 transition-all ease-in duration-500">
             <li class="mx-4 my-6">
-                <a href="/" class="text-xl text-pink-500 hover:text-black duration-500">Startseite</a>
+                <a href="/" class="nav-link @if(Request::is('/')) active @endif text-xl text-pink-500 hover:text-black duration-500">Startseite</a>
             </li>
             <div class="group md:relative flex flex-col">
                 <li class="mx-4 my-6">
-                    <a href="/überuns" class="text-xl text-pink-500 hover:text-black duration-500">über uns</a>
+                    <a href="/überuns" class="nav-link @if(Request::is('überuns')) active @endif text-xl text-pink-500 hover:text-black duration-500">über uns</a>
                 </li>
                 <li class="mx-4 my-6 top-8 md:absolute md:hidden md:group-hover:flex md:bg-gray-200">
-                    <a href="/kontakt" class="text-xl text-pink-600 hover:text-black duration-500 p-1">kontakt</a>
+                    <a href="/kontakt" class="nav-link @if(Request::is('kontakt')) active @endif text-xl text-pink-600 hover:text-black duration-500 p-1">kontakt</a>
                 </li>
             </div>
         </ul>

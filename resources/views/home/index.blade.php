@@ -5,13 +5,9 @@
 @section('content')
 
 <style>
-    .main {
-    font-family:Arial;
-    max-width:1200px;
-    display:block;
-    margin:0 auto;
-    }   
-  
+    .main {   
+        max-width:1200px;
+    }
 </style>
 
 <div class="container mx-auto ">
@@ -23,22 +19,21 @@
             </div>
 
             <!-- Slider -->
-            <div class="main ">
+            <div class="main">
                 <div class="slider slider-for">
                     <div><img src="/img/sliderfoto1.png" alt="sliderfoto1" class="mt-8"></div>
                     <div><img src="/img/sliderfoto2.png" alt="sliderfoto2" class="mt-8"></div>
                     <div><img src="/img/sliderfoto3.jpg" alt="sliderfoto3" class="mt-8"></div>
                     <div><img src="/img/sliderfoto4.jpg" alt="sliderfoto4" class="mt-8"></div>
-                    <div><img src="/img/sliderfoto5.jpg" alt="sliderfoto5" class="mt-8"></div>
+                    <div><img src="/img/sliderfoto5.jpg" alt="sliderfoto5" class="mt-8"></div>                 
                 </div>
-                <div class="slider slider-nav ">
-                    <div><img src="img/kleinfoto1.png" alt="kleinfoto1"></div>
-                    <div><img src="img/kleinfoto2.png" alt="kleinfoto2"></div>
-                    <div><img src="img/kleinfoto3.jpg" alt="kleinfoto3"></div>
-                    <div><img src="img/kleinfoto4.jpg" alt="kleinfoto4"></div>
-                    <div><img src="img/kleinfoto5.jpg" alt="kleinfoto5"></div>
-                </div>
-             
+                <div class="slider slider-nav ">                  
+                    <div><img src="img/kleinfoto1.png" alt="kleinfoto1" class="kleinfoto"></div>
+                    <div><img src="img/kleinfoto2.png" alt="kleinfoto2" class="kleinfoto"></div>
+                    <div><img src="img/kleinfoto3.jpg" alt="kleinfoto3" class="kleinfoto"></div>
+                    <div><img src="img/kleinfoto4.jpg" alt="kleinfoto4" class="kleinfoto"></div>
+                    <div><img src="img/kleinfoto5.jpg" alt="kleinfoto5" class="kleinfoto"></div>
+                </div>           
             </div>
 
             <div class="w-1/2 p-8">
@@ -50,25 +45,45 @@
  
 <!-- JQuery-JavaScript-Code für Slider -->
 <script>
-     $('.slider-for').slick({
-   slidesToShow: 1,
-   slidesToScroll: 1,
-   arrows: false,
-   fade: true,
-   asNavFor: '.slider-nav'
- });
- $('.slider-nav').slick({
-   slidesToShow: 5,
-   slidesToScroll: 1,
-   asNavFor: '.slider-for',
-   dots: true,
-   focusOnSelect: true
- });
-
- $('a[data-slide]').click(function(e) {
-   e.preventDefault();
-   var slideno = $(this).data('slide');
-   $('.slider-nav').slick('slickGoTo', slideno - 1);
- });
+   $('.slider-for').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.slider-nav'
+});
+$('.slider-nav').slick({
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  asNavFor: '.slider-for',
+  dots: true,
+  centerMode: true,
+  focusOnSelect: true,
+    responsive: [   
+        {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
 </script>
 @endsection
