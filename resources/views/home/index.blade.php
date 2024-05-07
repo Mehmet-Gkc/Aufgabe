@@ -40,7 +40,37 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis rerum corporis quas ea aliquid ad atque dolorum quam, molestias excepturi voluptatum mollitia provident dolorem odit! Nostrum, ipsum in nobis accusamus quae consequuntur accusantium voluptates ad pariatur cum, voluptatibus, eos sint. Voluptates incidunt nisi, amet earum commodi quod nostrum iste?</p>        
             </div>
         </div> 
-    </div>    
+    </div> 
+    
+    {{-- Unser Team --}}
+    <div class="container text-center">
+      <div class="mt-6">
+          <h2 class="font-team text-xl md:text-4xl my-4">Unser Team</h2>       
+      </div>
+
+      <!-- Wir haben die Daten, die wir als "mitarbeiters" von der HomeController.php Seite gesendet haben, hier verwendet -->
+      <div class="flex flex-col md:flex-row justify-center text-center">
+          <div class="p-4">
+              <img src="img/foto2.png" alt="" class="">
+              <span class="text-lg md:text-2xl uppercase font-bold text-pink-600">{{ $mitarbeiters[0]['vorname'] }}</span>
+              <span class="text-lg md:text-2xl uppercase font-bold text-pink-600">{{ $mitarbeiters[0]['nachname'] }}</span>
+              <p>{{ $mitarbeiters[0]['email'] }}</p>  
+          </div>
+          
+           <div class="p-4">
+              <img src="img/foto3.png" alt="" >
+              <span class="text-lg md:text-2xl uppercase font-bold text-pink-600">{{ $mitarbeiters[1]['vorname'] }}</span>
+              <span class="text-lg md:text-2xl uppercase font-bold text-pink-600">{{ $mitarbeiters[1]['nachname'] }}</span>
+              <p>{{ $mitarbeiters[1]['email'] }}</p>  
+          </div>        
+      </div>
+
+      <div class="mb-4">
+        <a href="/überuns" class="text-xl uppercase font-bold text-pink-500 bg-gray-200 hover:text-black duration-500 m-4 px-4">über uns</a>    
+      </div>
+
+  </div>
+  
 </div>
  
 <!-- JQuery-JavaScript-Code für Slider -->

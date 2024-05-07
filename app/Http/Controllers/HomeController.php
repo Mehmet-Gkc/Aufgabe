@@ -9,8 +9,10 @@ use Illuminate\Http\Request;
 // wir werden diese Funktion in die Seite routes/web.php importieren und die Seite verwalten
 class HomeController extends Controller
 {
-    public function index() {        
-        return view('home.index');        
+    public function index() {  
+        // wir senden die Daten aus der Datenbank als key "mitarbeiters" an die Start-Seite
+        $mitarbeiters = Mitarbeiters::all();
+        return view('home.index', ['mitarbeiters' => $mitarbeiters ]);        
     }
 
     public function überuns() {
