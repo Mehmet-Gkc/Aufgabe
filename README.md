@@ -5,29 +5,18 @@
 ---
 
 ![Screenshot from Project](./public/img/homepage.png)
-#### Navigation
-
-- About Project
-  - _Description_
-  - _Developed With_
-- Contact
-  - E-Mail: 
-  - GitHub: 
-- Used Tools
-  - _Laravel_
-  - _JQuery_
-  - _Tailwind_
-  - _Icons_
-  - _Fonts_
 
 ---
 ### About Project
 
-In our project we offer tourists the sights of a country or the world.
-The following functions can be used in our system:
-1. Startseite
-2. Über uns
-3. Kontakt
+Die Struktur meines Projekts sieht wie folgt aus:
+
+1. Im Ordner resources/views habe ich alle Seiten wie „Startseite“, „Überuns“, „Kontakt“, und „Layout“ als separate Dateien abgelegt. Hier befinden sich auch die HTML-, CSS-, TailwindCSS- und JavaScript-Codes.
+2. Im Ordner app/Http/Controllers habe ich die Dateien HomeController.php und ContactController.php erstellt. Diese Controller-Dateien werden in routes/web.php importiert, um die Seiten von dort aus zu verwalten. Mit den Funktionen, die ich im HomeController.php geschrieben habe, hole ich die Daten aus der Datenbank und sende sie an die entsprechenden Seiten im Ordner resources/views/, wo sie dann verwendet werden.
+3. Ich habe eine Datenbank mit MySQL erstellt, die die Vornamen, Nachnamen und E-Mail-Adressen der Mitarbeiter enthält. Diese Daten werden dynamisch abgerufen und auf den Seiten „Startseite“ und „Überuns“ verwendet. Die Bilder, die auf diesen Seiten genutzt werden, sind im Ordner public/img gespeichert.
+4. Mit den Funktionen, die ich im ContactController.php geschrieben habe, empfange ich die Daten aus dem Kontaktformular als $data. Anschließend wird eine E-Mail von der Seite gesendet. Nach erfolgreichem Versand der Nachricht wird die Seite auf resources/views/kontakt/message.blade.php umgeleitet.
+
+5. Die E-Mail-Verarbeitung wird mit den Funktionen in app/Mail/ContactUs.php gesteuert.
 
 ### Developed With
 #### Frontend
